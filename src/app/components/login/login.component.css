@@ -1,0 +1,86 @@
+
+ .header-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  
+  .toolbar-logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .toolbar-spacer {
+    flex: 1 1 auto;
+  }
+  
+
+  .login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 64px);
+    margin-top: 64px; 
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 400px; 
+    padding: 24px;
+    box-sizing: border-box;
+    text-align: center; 
+  }
+  
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px; 
+  }
+  
+  .login-field {
+    width: 100%;
+  }
+  
+  .login-button {
+    margin-top: 8px;
+    width: 100%; 
+  }
+  
+  .social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+  }
+  
+  .social-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .register-link {
+    text-transform: none; 
+    font-weight: 600;
+  }
+
+.login-button {
+    margin-top: 8px;
+    width: 100%;
+  }
+  
+  .soft-disabled {
+    background-color: #90caf9 !important; 
+    color: rgba(255, 255, 255, 0.7) !important; 
+  }
+  

@@ -1,0 +1,68 @@
+<!-- Barra superior fija -->
+<mat-toolbar color="primary" class="header-toolbar">
+  <span class="toolbar-logo">SportApp</span>
+  <span class="toolbar-spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="login-container">
+  <mat-card class="login-card">
+    <h2>Inicio de Sesión</h2>
+
+    <!-- Formulario Reactivo -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <!-- Usuario -->
+      <mat-form-field appearance="outline" class="login-field">
+        <mat-label>Usuario</mat-label>
+        <input matInput formControlName="usuario" />
+        <mat-error *ngIf="usuario?.hasError('required')">
+          El usuario es obligatorio
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Contraseña -->
+      <mat-form-field appearance="outline" class="login-field">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="contrasena" />
+        <mat-error *ngIf="contrasena?.hasError('required')">
+          La contraseña es obligatoria
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Botón principal: aplica clase "soft-disabled" cuando el formulario sea inválido -->
+      <button
+        mat-raised-button
+        color="primary"
+        class="login-button"
+        type="submit"
+        [ngClass]="{ 'soft-disabled': loginForm.invalid }"
+      >
+        Ingresar
+      </button>
+    </form>
+
+    <!-- Botones sociales -->
+    <div class="social-login">
+      <button mat-stroked-button class="social-button">
+        <img src="assets/icons/google.svg" alt="Google" class="social-icon" />
+        Ingresar con Google
+      </button>
+      <button mat-stroked-button class="social-button">
+        <img src="assets/icons/apple.svg" alt="Apple" class="social-icon" />
+        Ingresar con Apple
+      </button>
+    </div>
+
+    <!-- Enlace / Botón para registro -->
+    <button
+    mat-button
+    color="primary"
+    class="register-link"
+    [routerLink]="'/register'"
+  >
+      Registrarse por correo
+    </button>
+  </mat-card>
+</div>
