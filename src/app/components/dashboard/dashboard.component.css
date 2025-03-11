@@ -1,0 +1,99 @@
+
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.dashboard-container {
+  width: 100%;
+  display: grid;
+  padding: 34px;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: 16px;
+  margin: 16px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.metric-card {
+  padding: 16px;
+}
+.metric-card-full {
+  padding: 16px;
+  height: 100%;
+}
+
+.metric-value {
+  color: #FF5722;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.metric-description {
+  font-size: 1rem;
+}
+
+.large-icon {
+  width: 80px;
+  height: 80%;
+  fill: #F58220;
+}
+
+.icon-large {
+  width: 48px;
+  height: 48px;
+  fill: #F58220;
+}
+
+.routine-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.routine-item-card {
+  padding: 8px;
+}
+.mat-card-full {
+  padding: 16px;
+  height: 100%;
+}
+
+.routine-item-card mat-card-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.routine-icon {
+  width: 32px;
+  height: 32px;
+  fill: #F58220; 
+}
+
+.routine-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.routine-title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.routine-description {
+  font-size: 0.85rem;
+  color: #777;
+}

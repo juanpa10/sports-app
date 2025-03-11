@@ -1,0 +1,106 @@
+<mat-toolbar color="primary" class="toolbar">
+  <span>SportApp</span>
+  <span class="spacer"></span>
+  <button mat-icon-button aria-label="Perfil de usuario">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="dashboard-container">
+  <!-- Columna 1 -->
+  <div class="column">
+    <mat-card class="metric-card">
+      <mat-card-header>
+        <mat-card-title>Frecuencia cardiaca</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="metric-value">75</div>
+        <div class="metric-description">
+          Este fue tu registro de FC en el último entrenamiento
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="metric-card">
+      <mat-card-header>
+        <mat-card-title>Intensidad</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-icon class="icon-large" svgIcon="crono"></mat-icon>
+        <div class="metric-description">
+          La intensidad que elegiste fue media
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Columna 2 -->
+  <div class="column">
+    <mat-card class="metric-card">
+      <mat-card-header>
+        <mat-card-title>Rutina</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-icon class="icon-large" svgIcon="overhead"></mat-icon>
+        <div class="metric-description">
+          La rutina que seguiste fue fuerza
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="metric-card">
+      <mat-card-header>
+        <mat-card-title>Peso</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="metric-value">70</div>
+        <div class="metric-description">
+          Este fue el último registro de tu peso
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Columna 3: Mis rutinas -->
+  <div class="column">
+    <mat-card class="metric-card-full">
+      <mat-card-header>
+        <mat-card-title>Mis rutinas</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="routine-list-container">
+        <!-- Tarjeta individual para "Entrenamiento de Fuerza" -->
+        <mat-card class="routine-item-card">
+          <mat-card-content>
+            <mat-icon class="routine-icon" svgIcon="overhead"></mat-icon>
+            <div class="routine-text">
+              <div class="routine-title">Entrenamiento de Fuerza</div>
+              <div class="routine-description">Consulta tus rutinas de fuerza aquí</div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <!-- Tarjeta individual para "Entrenamientos Push-Ups" -->
+        <mat-card class="routine-item-card">
+          <mat-card-content>
+            <mat-icon class="routine-icon" svgIcon="mancuerna"></mat-icon>
+            <div class="routine-text">
+              <div class="routine-title">Entrenamientos Push-Ups</div>
+              <div class="routine-description">Consulta tus rutinas de push-ups aquí</div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <!-- Tarjeta individual para "Entrenamiento de Cardio" -->
+        <mat-card class="routine-item-card">
+          <mat-card-content>
+            <mat-icon class="routine-icon" svgIcon="bici"></mat-icon>
+            <div class="routine-text">
+              <div class="routine-title">Entrenamiento de Cardio</div>
+              <div class="routine-description">Consulta tus rutinas de cardio aquí</div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+ .header-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  
+  .toolbar-logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .soft-disabled {
+    background-color: #90caf9 !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  
+  
+  .toolbar-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .split-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100vh - 64px); 
+    margin-top: 64px;         
+    overflow-y: auto;           
+  }
+  
+
+  .left-pane {
+    flex: 1;
+    display: flex;
+    align-items: center;         
+    justify-content: center;    
+  }
+  
+  .form-wrapper {
+    width: 80%;       
+    max-width: 600px;
+  }
+  
+ 
+  .registro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; 
+  }
+  
+  mat-form-field {
+    width: 100%; 
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .right-pane {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .biceps-icon {
+    width: 300px;
+    height: auto;
+    max-width: 100%;
+  }
+  

@@ -1,0 +1,126 @@
+<!-- Barra superior fija -->
+<mat-toolbar color="primary" class="header-toolbar">
+  <span class="toolbar-logo">SportApp</span>
+  <span class="toolbar-spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
+
+<!-- Contenedor que parte la pantalla en 2 mitades -->
+<div class="split-container">
+  <!-- Mitad izquierda (Formulario) -->
+  <div class="left-pane">
+    <div class="form-wrapper">
+      <h2>Registro por correo</h2>
+      <form [formGroup]="registroForm" (ngSubmit)="onSubmit()" class="registro-form">
+        <!-- Nombre -->
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="nombre" />
+          <mat-error *ngIf="registroForm.get('nombre')?.hasError('required')">
+            El nombre es obligatorio
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Apellido -->
+        <mat-form-field appearance="outline">
+          <mat-label>Apellido</mat-label>
+          <input matInput formControlName="apellido" />
+          <mat-error *ngIf="registroForm.get('apellido')?.hasError('required')">
+            El apellido es obligatorio
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Usuario -->
+        <mat-form-field appearance="outline">
+          <mat-label>Usuario</mat-label>
+          <input matInput formControlName="usuario" />
+          <mat-error *ngIf="registroForm.get('usuario')?.hasError('required')">
+            El usuario es obligatorio
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Peso -->
+        <mat-form-field appearance="outline">
+          <mat-label>Peso (Kg)</mat-label>
+          <input matInput type="number" formControlName="peso" />
+          <mat-error *ngIf="registroForm.get('peso')?.hasError('required')">
+            El peso es obligatorio
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Altura -->
+        <mat-form-field appearance="outline">
+          <mat-label>Altura (cm)</mat-label>
+          <input matInput type="number" formControlName="altura" />
+          <mat-error *ngIf="registroForm.get('altura')?.hasError('required')">
+            La altura es obligatoria
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Frecuencia de ejercicio -->
+        <mat-form-field appearance="outline">
+          <mat-label>Número de veces que realizas ejercicio a la semana</mat-label>
+          <input matInput type="number" formControlName="frecuencia" />
+          <mat-error *ngIf="registroForm.get('frecuencia')?.hasError('required')">
+            La frecuencia es obligatoria
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Correo electrónico -->
+        <mat-form-field appearance="outline">
+          <mat-label>Correo electrónico</mat-label>
+          <input matInput type="email" formControlName="correo" />
+          <mat-error *ngIf="registroForm.get('correo')?.hasError('required')">
+            El correo es obligatorio
+          </mat-error>
+          <mat-error *ngIf="registroForm.get('correo')?.hasError('email')">
+            Debe ser un correo válido
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Contraseña -->
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="contrasena" />
+          <mat-error *ngIf="registroForm.get('contrasena')?.hasError('required')">
+            La contraseña es obligatoria
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Botones -->
+        <div class="button-group">
+
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            (click)="onSubmit()"
+            [ngClass]="{'soft-disabled': registroForm.invalid}">
+            Registrarse
+          </button>
+
+
+          <!--button mat-raised-button color="primary" type="submit">
+            Registrarse
+          </button-->
+          
+          <button mat-stroked-button type="button"
+            [routerLink]="'/login'">
+            Volver
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Mitad derecha (Ícono) -->
+  <div class="right-pane">
+    <img
+      src="assets/icons/bicep.svg"
+      alt="Ícono de bíceps"
+      class="biceps-icon"
+    />
+  </div>
+</div>
