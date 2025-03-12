@@ -1,0 +1,24 @@
+<mat-toolbar color="white" class="header-toolbar">
+  <span class="toolbar-logo">SportApp</span>
+  <span class="toolbar-spacer"></span>
+  <button mat-icon-button [routerLink]="'/menu'">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="content">
+  <h1>Usuario Registrado con éxito</h1>
+  
+  <div class="right-pane">
+    <img
+      src="assets/icons/bicep.svg"
+      alt="Ícono de bíceps"
+      class="biceps-icon"
+    />
+  </div>
+
+  <button mat-raised-button color="primary" class="login-button"  [routerLink]="'/login'">
+    Ir a inicio de sesión
+  </button>
+  
+</div>

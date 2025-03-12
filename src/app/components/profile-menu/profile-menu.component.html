@@ -1,0 +1,74 @@
+<mat-toolbar class="header-toolbar">
+  <span class="toolbar-logo">SportApp</span>
+  <span class="toolbar-spacer"></span>
+  <button mat-icon-button [routerLink]="'/menu'">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
+
+
+<div class="menu-container">
+  
+  <mat-card class="menu-card">
+    
+    <div class="icon-container">
+      <img
+        src="assets/icons/perfilMujer.svg"
+        alt="Ícono perfil mujer"
+        class="profile-icon"
+      />
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="menu-form">
+      <button
+        mat-raised-button
+        color="primary"
+        class="menu-button"
+        type="submit"  (click)="onSincronizar()"
+      >
+        Sincronizar Datos
+      </button>
+      <div class="error-message" *ngIf="showSyncNotAvailable">
+        Esta función todavía no está disponible.
+      </div>
+      <button
+        mat-raised-button
+        color="primary"
+        class="menu-button"
+        type="submit" (click)="onActualizar()"
+      >
+        Actualizar Datos
+      </button>
+      <div class="error-message" *ngIf="showUpdateNotAvailable">
+        Esta función todavía no está disponible.
+      </div>
+      <button
+        mat-raised-button
+        color="primary"
+        class="menu-button"
+        type="submit" [routerLink]="'/login'"
+      >
+        Cerrar Sesión
+      </button>
+    </form>
+
+    <button
+      mat-button
+      color="basic"
+      [matMenuTriggerFor]="moreOptionsMenu"
+      class="register-link more-options-button mat-menu-panel"
+    >
+      Más Opciones
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+
+    <mat-menu #moreOptionsMenu="matMenu">
+      <button mat-menu-item>Opción no disponible aun</button>
+      <button mat-menu-item>Opción no disponible aun</button>
+      <button mat-menu-item>Opción no disponible aun</button>
+    </mat-menu>
+    <button mat-button class="volver-button" (click)="onVolver()">
+      &larr; Volver
+    </button>
+  </mat-card>
+</div>

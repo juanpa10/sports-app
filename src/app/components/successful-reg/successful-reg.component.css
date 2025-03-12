@@ -1,0 +1,50 @@
+
+   body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+  }
+  .header-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url('/assets/icons/panel.svg') !important;
+    z-index: 999;
+    border-bottom: 1px solid #000;
+    background-color: #fff !important;
+  }
+  
+  mat-toolbar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .app-logo {
+    margin-left: 16px;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .content {
+    text-align: center;
+    margin-top: 5%;
+  }
+  
+  .biceps-icon {
+    width: 300px;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  .success-image {
+    width: 150px;
+    margin: 40px 0;
+  }
+  
+  .login-button {
+    margin-top: 20px;
+  }
+  
