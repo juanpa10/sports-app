@@ -1,13 +1,20 @@
-
-.toolbar {
+.header-toolbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  background-image: url('/assets/icons/panel.svg') !important;
   z-index: 999;
+  border-bottom: 1px solid #000;
+  background-color: #fff !important;
 }
 
-.spacer {
+.toolbar-logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.toolbar-spacer {
   flex: 1 1 auto;
 }
 
@@ -15,6 +22,7 @@
   width: 100%;
   display: grid;
   padding: 34px;
+  padding-top: 78px;
   grid-template-columns: 1fr 1fr 1.5fr;
   gap: 16px;
   margin: 16px;
@@ -26,9 +34,32 @@
   gap: 16px;
 }
 
+/* Contenedor que agrupa título e ícono por fuera del card */
+.metric-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Título (fuera del card) con ícono o emoji */
+.metric-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 8px;    /* Opcional, para alinear con la tarjeta */
+  margin-bottom: 4px; /* Espacio entre el título y la tarjeta */
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Tamaño del emoji o iconito al lado del texto */
+.emoji {
+  font-size: 1.2rem;
+}
+
 .metric-card {
   padding: 16px;
 }
+
 .metric-card-full {
   padding: 16px;
   height: 100%;
@@ -44,11 +75,8 @@
 .metric-description {
   font-size: 1rem;
 }
-
-.large-icon {
-  width: 80px;
-  height: 80%;
-  fill: #F58220;
+.metric-history {
+  font-size: 0.7rem;
 }
 
 .icon-large {
@@ -65,10 +93,6 @@
 
 .routine-item-card {
   padding: 8px;
-}
-.mat-card-full {
-  padding: 16px;
-  height: 100%;
 }
 
 .routine-item-card mat-card-content {

@@ -1,106 +1,119 @@
-<mat-toolbar color="primary" class="toolbar">
-  <span>SportApp</span>
-  <span class="spacer"></span>
-  <button mat-icon-button aria-label="Perfil de usuario">
-    <mat-icon>account_circle</mat-icon>
+<mat-toolbar color="white" class="header-toolbar">
+  <span class="toolbar-logo">SportApp</span>
+  <span class="toolbar-spacer"></span>
+  <button mat-icon-button [routerLink]="'/menu'" aria-label="Abrir menú">
+    <mat-icon aria-hidden="true">account_circle</mat-icon>
   </button>
 </mat-toolbar>
 
 <div class="dashboard-container">
-  <!-- Columna 1 -->
   <div class="column">
-    <mat-card class="metric-card">
-      <mat-card-header>
-        <mat-card-title>Frecuencia cardiaca</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <div class="metric-value">75</div>
-        <div class="metric-description">
-          Este fue tu registro de FC en el último entrenamiento
-        </div>
-      </mat-card-content>
-    </mat-card>
+    <div class="metric-container">
+      <div class="metric-title">
+        <span>Frecuencia cardiaca</span>
+        <span class="emoji" aria-hidden="true">❤️</span>
+      </div>
+      <mat-card class="metric-card">
+        <mat-card-content>
+          <div class="metric-value">{{heartRate}}</div>
+          <div class="metric-description">
+            Este fue tu registro de FC en el último entrenamiento
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
 
-    <mat-card class="metric-card">
-      <mat-card-header>
-        <mat-card-title>Intensidad</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-icon class="icon-large" svgIcon="crono"></mat-icon>
-        <div class="metric-description">
-          La intensidad que elegiste fue media
-        </div>
-      </mat-card-content>
-    </mat-card>
+    <div class="metric-container">
+      <div class="metric-title">
+        <span>Intensidad</span>
+        <span class="emoji" aria-hidden="true">🔥</span>
+      </div>
+      <mat-card class="metric-card">
+        <mat-card-content>
+          <mat-icon class="icon-large" svgIcon="crono" aria-hidden="true"></mat-icon>
+          <div class="metric-description">
+            La intensidad que elegiste fue {{intensidad}}
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 
-  <!-- Columna 2 -->
   <div class="column">
-    <mat-card class="metric-card">
-      <mat-card-header>
-        <mat-card-title>Rutina</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-icon class="icon-large" svgIcon="overhead"></mat-icon>
-        <div class="metric-description">
-          La rutina que seguiste fue fuerza
-        </div>
-      </mat-card-content>
-    </mat-card>
+    <!-- Se cambió el contenedor interactivo a un enlace accesible -->
+    <a class="metric-container" [routerLink]="'/history'" role="button" tabindex="0" aria-label="Ver historial de rutina">
+      <div class="metric-title">
+        <span>Rutina</span>
+        <span class="emoji" aria-hidden="true">🏋️</span>
+      </div>
+      <mat-card class="metric-card">
+        <mat-card-content>
+          <mat-icon class="icon-large" [svgIcon]="svg" aria-hidden="true"></mat-icon>
+          <div class="metric-description">
+            La rutina que seguiste fue {{ejercicio}}
+          </div>
+          <div class="metric-history">
+            Click acá para ver el historial
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </a>
 
-    <mat-card class="metric-card">
-      <mat-card-header>
-        <mat-card-title>Peso</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <div class="metric-value">70</div>
-        <div class="metric-description">
-          Este fue el último registro de tu peso
-        </div>
-      </mat-card-content>
-    </mat-card>
+    <div class="metric-container">
+      <div class="metric-title">
+        <span>Peso</span>
+        <span class="emoji" aria-hidden="true">🍎</span>
+      </div>
+      <mat-card class="metric-card">
+        <mat-card-content>
+          <div class="metric-value">70</div>
+          <div class="metric-description">
+            Este fue el último registro de tu peso
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 
-  <!-- Columna 3: Mis rutinas -->
   <div class="column">
-    <mat-card class="metric-card-full">
-      <mat-card-header>
-        <mat-card-title>Mis rutinas</mat-card-title>
-      </mat-card-header>
-      <mat-card-content class="routine-list-container">
-        <!-- Tarjeta individual para "Entrenamiento de Fuerza" -->
-        <mat-card class="routine-item-card">
-          <mat-card-content>
-            <mat-icon class="routine-icon" svgIcon="overhead"></mat-icon>
-            <div class="routine-text">
-              <div class="routine-title">Entrenamiento de Fuerza</div>
-              <div class="routine-description">Consulta tus rutinas de fuerza aquí</div>
-            </div>
-          </mat-card-content>
-        </mat-card>
+    <div class="metric-container">
+      <div class="metric-title">
+        <span>Mis rutinas</span>
+        <span class="emoji" aria-hidden="true">📋</span>
+      </div>
+      <mat-card class="metric-card-full">
+        <mat-card-content class="routine-list-container">
+          <mat-card class="routine-item-card" role="button" tabindex="0" (click)="onFuerza()" (keyup.enter)="onFuerza()" aria-label="Entrenamiento de Fuerza. Consulta tus rutinas de fuerza aquí">
+            <mat-card-content>
+              <mat-icon class="routine-icon" svgIcon="overhead" aria-hidden="true"></mat-icon>
+              <div class="routine-text">
+                <div class="routine-title">Entrenamiento de Fuerza</div>
+                <div class="routine-description">Consulta tus rutinas de fuerza aquí</div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+          
+          <mat-card class="routine-item-card" role="button" tabindex="0" (click)="onPushUps()" (keyup.enter)="onPushUps()" aria-label="Entrenamientos Push-Ups. Consulta tus rutinas de push-ups aquí">
+            <mat-card-content>
+              <mat-icon class="routine-icon" svgIcon="mancuerna" aria-hidden="true"></mat-icon>
+              <div class="routine-text">
+                <div class="routine-title">Entrenamientos Push-Ups</div>
+                <div class="routine-description">Consulta tus rutinas de push-ups aquí</div>
+              </div>
+            </mat-card-content>
+          </mat-card>
 
-        <!-- Tarjeta individual para "Entrenamientos Push-Ups" -->
-        <mat-card class="routine-item-card">
-          <mat-card-content>
-            <mat-icon class="routine-icon" svgIcon="mancuerna"></mat-icon>
-            <div class="routine-text">
-              <div class="routine-title">Entrenamientos Push-Ups</div>
-              <div class="routine-description">Consulta tus rutinas de push-ups aquí</div>
-            </div>
-          </mat-card-content>
-        </mat-card>
-
-        <!-- Tarjeta individual para "Entrenamiento de Cardio" -->
-        <mat-card class="routine-item-card">
-          <mat-card-content>
-            <mat-icon class="routine-icon" svgIcon="bici"></mat-icon>
-            <div class="routine-text">
-              <div class="routine-title">Entrenamiento de Cardio</div>
-              <div class="routine-description">Consulta tus rutinas de cardio aquí</div>
-            </div>
-          </mat-card-content>
-        </mat-card>
-      </mat-card-content>
-    </mat-card>
+          <mat-card class="routine-item-card" role="button" tabindex="0" (click)="onCardio()" (keyup.enter)="onCardio()" aria-label="Entrenamiento de Cardio. Consulta tus rutinas de cardio aquí">
+            <mat-card-content>
+              <mat-icon class="routine-icon" svgIcon="bici" aria-hidden="true"></mat-icon>
+              <div class="routine-text">
+                <div class="routine-title">Entrenamiento de Cardio</div>
+                <div class="routine-description">Consulta tus rutinas de cardio aquí</div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 </div>

@@ -1,65 +1,55 @@
-<!-- Barra superior fija -->
 <mat-toolbar color="white" class="header-toolbar">
   <span class="toolbar-logo">SportApp</span>
   <span class="toolbar-spacer"></span>
-  <button mat-icon-button [routerLink]="'/menu'">
-    <mat-icon>account_circle</mat-icon>
+  <button mat-icon-button [routerLink]="'/menu'" aria-label="Abrir menú">
+    <mat-icon aria-hidden="true">account_circle</mat-icon>
   </button>
 </mat-toolbar>
 
-<!-- Contenedor principal (2 columnas) -->
 <div class="content-container">
-  <!-- Columna izquierda (70%) -->
   <div class="left-column">
-    <button mat-button class="volver-button" (click)="onVolver()">
+    <button mat-button class="volver-button" (click)="onVolver()" aria-label="Volver a la página anterior">
       &larr; Volver
     </button>
 
-    <h2>Historial Rutinas</h2>
+    <h2 id="historial-title">Historial Rutinas</h2>
 
-    <!-- Contenedor con scroll vertical/horizontal -->
-    <div class="table-container">
-      <table mat-table [dataSource]="dataSource" class="history-table">
-        <!-- Columnas -->
+    <div class="table-container" role="region" tabindex="0" aria-labelledby="historial-title">
+      <table mat-table [dataSource]="dataSource" class="history-table" aria-label="Tabla de historial de rutinas">
+
+        
         <ng-container matColumnDef="rutina">
           <th mat-header-cell class="header-azul" *matHeaderCellDef> Rutina </th>
           <td mat-cell *matCellDef="let element"> {{ element.rutina }} </td>
         </ng-container>
 
-        <ng-container  matColumnDef="intensidad">
-          <th mat-header-cell class="header-azul"  *matHeaderCellDef > Intensidad </th>
+        <ng-container matColumnDef="intensidad">
+          <th mat-header-cell class="header-azul" *matHeaderCellDef> Intensidad </th>
           <td mat-cell *matCellDef="let element"> {{ element.intensidad }} </td>
         </ng-container>
 
         <ng-container matColumnDef="tiempo">
-          <th mat-header-cell class="header-azul"  *matHeaderCellDef> Tiempo </th>
+          <th mat-header-cell class="header-azul" *matHeaderCellDef> Tiempo </th>
           <td mat-cell *matCellDef="let element"> {{ element.tiempo }} </td>
         </ng-container>
 
         <ng-container matColumnDef="fecha">
-          <th mat-header-cell class="header-azul"  *matHeaderCellDef> Fecha </th>
+          <th mat-header-cell class="header-azul" *matHeaderCellDef> Fecha </th>
           <td mat-cell *matCellDef="let element"> {{ element.fecha }} </td>
         </ng-container>
 
-        <!-- Encabezado sticky -->
         <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-        <!-- Filas de datos -->
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
     </div>
   </div>
 
-  <!-- Columna derecha (30%) -->
-  <!-- Columna derecha (30%) -->
-<div class="right-column">
-  <!-- Párrafo arriba -->
-  <p>Estas son las rutinas que has realizado durante este mes!</p>
-  <!-- Ícono abajo -->
-  <img
-    src="assets/icons/calendar.svg"
-    alt="Calendar Icon"
-    class="right-icon"
-  />
-</div>
-
+  <div class="right-column">
+    <p>Estas son las rutinas que has realizado durante este mes!</p>
+    <img
+      src="assets/icons/calendar.svg"
+      alt="Icono de calendario"
+      class="right-icon"
+    />
+  </div>
 </div>

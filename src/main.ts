@@ -5,6 +5,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './app/components/dashboard/dashboard.component';
 import { HistoryComponent } from './app/components/history/history.component';
 import { LoginComponent } from './app/components/login/login.component';
+import { ProfileMenuComponent } from './app/components/profile-menu/profile-menu.component';
 import { RegisterComponent } from './app/components/register/register.component';
 import { provideHttpClient } from '@angular/common/http';
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'successful', component: SuccessfulRegComponent },
+  { path: 'menu', component: ProfileMenuComponent },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 ];
 

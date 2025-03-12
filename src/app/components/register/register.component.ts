@@ -16,7 +16,7 @@ import { Router, RouterModule } from '@angular/router';
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule, // Importante para usar Reactive Forms
+    ReactiveFormsModule, 
     MatToolbarModule,
     MatIconModule,
     RouterModule,
@@ -28,7 +28,6 @@ import { Router, RouterModule } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   
-  // Definimos el FormGroup con validaciones
   registroForm: FormGroup;
 
   constructor(private fb: FormBuilder, private router: Router) {
@@ -45,14 +44,12 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // Si el formulario NO es válido, marcamos todos los campos como 'touched' para mostrar errores
     if (this.registroForm.invalid) {
       this.registroForm.markAllAsTouched();
       return;
     }
 
     this.router.navigate(['/successful']);
-    // Aquí iría la lógica para registrar al usuario si el formulario es válido
     console.log('Formulario válido. Datos:', this.registroForm.value);
   }
 
