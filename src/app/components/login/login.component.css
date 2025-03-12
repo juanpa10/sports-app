@@ -1,11 +1,13 @@
-
- .header-toolbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-  }
+.header-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: url('/assets/icons/panel.svg') !important;
+  z-index: 999;
+  border-bottom: 1px solid #000;
+  background-color: #fff !important;
+}
   
   .toolbar-logo {
     font-weight: bold;
